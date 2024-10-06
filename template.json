@@ -1,0 +1,47 @@
+{
+    "preamble": [
+      "\\documentclass[12pt,a4paper]{article}",
+      "\\usepackage{ctex}",
+      "\\usepackage{geometry}",
+      "\\usepackage{amsmath,paralist,enumerate,booktabs,multirow,graphicx,subfig,setspace,listings,lastpage}",
+      "\\setlength{\\parindent}{2em}",
+      "\\usepackage{hyperref}",
+      "\\hypersetup{hidelinks}",
+      "\\usepackage{fancyhdr}",
+      "\\setlength{\\headheight}{14.5pt}",
+      "\\addtolength{\\topmargin}{-2.5pt}",
+      "\\pagestyle{fancy}",
+      "\\rhead{实验B01 参考文献的检索和管理}",
+      "\\lhead{基础物理实验\\uppercase\\expandafter{\\romannumeral2}实验报告}",
+      "\\cfoot{Page \\thepage/\\pageref{LastPage}}",
+      "\\rfoot{\\today}",
+      "\\renewcommand{\\headrulewidth}{0.4pt}",
+      "\\renewcommand{\\theenumi}{(\\arabic{enumi})}"
+    ],
+    "document_start": [
+      "\\begin{document}",
+      "\\begin{center}",
+      "\\LARGE\\textbf{{{title}}}",
+      "\\end{center}",
+      "\\begin{doublespacing}",
+      "    \\centering",
+      "    \\begin{tabular}{p{6.5cm}p{6.5cm}}",
+      "     & \\\\",
+      "     实验人姓名、学号：{{name}} & 合作者姓名、学号：{{partner}}\\\\",
+      "     时间：{{date}} & 实验地点：{{location}}\\\\",
+      "     室温：{{temperature}} & 相对湿度：{{humidity}}",
+      "    \\end{tabular}",
+      "\\end{doublespacing}"
+    ],
+    "sections": [
+      {"name": "实验目的", "content": "{{purpose}}"},
+      {"name": "仪器用具", "content": "{{equipment}}"},
+      {"name": "实验原理", "content": "{{principle}}"},
+      {"name": "实验内容及步骤", "content": "{{procedure}}"},
+      {"name": "数据处理及分析", "content": "{{analysis}}"},
+      {"name": "思考题", "content": "{{questions}}"}
+    ],
+    "document_end": [
+      "\\end{document}"
+    ]
+  }

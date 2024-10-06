@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaTeX Template Editor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="menu-bar">
+            <a href="#">文件</a>
+            <a href="#">编辑</a>
+            <a href="#">视图</a>
+            <a href="#">帮助</a>
+        </div>
+        
+        <div class="toolbar">
+            <button onclick="alert('新建文件')">新建</button>
+            <button onclick="alert('打开文件')">打开</button>
+            <button onclick="alert('保存文件')">保存</button>
+            <button onclick="submitForm()">生成 LaTeX</button>
+        </div>
+
+        <div class="main-content">
+            <nav class="sidebar">
+                <ul>
+                    <li><a href="#title">标题</a></li>
+                    <li><a href="#name">实验人信息</a></li>
+                    <li><a href="#date">时间和地点</a></li>
+                    <li><a href="#purpose">实验目的</a></li>
+                    <li><a href="#equipment">仪器用具</a></li>
+                    <li><a href="#principle">实验原理</a></li>
+                    <li><a href="#procedure">实验步骤</a></li>
+                    <li><a href="#analysis">数据分析</a></li>
+                    <li><a href="#questions">思考题</a></li>
+                </ul>
+            </nav>
+            <div class="content-wrapper">
+                <div class="content">
+                    <form id="latex-form">
+                        <label for="title">标题:</label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="name">实验人姓名、学号:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="partner">合作者姓名、学号:</label>
+                        <input type="text" id="partner" name="partner">
+
+                        <label for="date">时间:</label>
+                        <input type="text" id="date" name="date" required>
+
+                        <label for="location">实验地点:</label>
+                        <input type="text" id="location" name="location" required>
+
+                        <label for="temperature">室温:</label>
+                        <input type="text" id="temperature" name="temperature">
+
+                        <label for="humidity">相对湿度:</label>
+                        <input type="text" id="humidity" name="humidity">
+
+                        <label for="purpose">实验目的:</label>
+                        <textarea id="purpose" name="purpose" rows="4" required></textarea>
+
+                        <label for="equipment">仪器用具:</label>
+                        <textarea id="equipment" name="equipment" rows="4" required></textarea>
+
+                        <label for="principle">实验原理:</label>
+                        <textarea id="principle" name="principle" rows="6" required></textarea>
+
+                        <label for="procedure">实验内容及步骤:</label>
+                        <textarea id="procedure" name="procedure" rows="6" required></textarea>
+
+                        <label for="analysis">数据处理及分析:</label>
+                        <textarea id="analysis" name="analysis" rows="6" required></textarea>
+
+                        <label for="questions">思考题:</label>
+                        <textarea id="questions" name="questions" rows="6" required></textarea>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <button id="toggle-sidebar" class="toggle-sidebar-btn" type="button" aria-label="Toggle sidebar"></button>
+            <span id="status-message">就绪</span>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            const form = document.getElementById('latex-form');
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            document.getElementById('status-message').textContent = '正在生成 LaTeX 文件...';
+            pywebview.api.generate_latex(data).then(() => {
+                document.getElementById('status-message').textContent = 'LaTeX 文件生成完成';
+            }).catch(() => {
+                document.getElementById('status-message').textContent = 'LaTeX 文件生成失败';
+            });
+        }
+
+        // 添加新的 JavaScript 代码
+        document.getElementById('toggle-sidebar').addEventListener('click', function() {
+            document.querySelector('.app-container').classList.toggle('sidebar-collapsed');
+        });
+    </script>
+</body>
+</html>

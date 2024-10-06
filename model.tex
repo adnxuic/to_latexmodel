@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{ctex}
+
+\usepackage{geometry}%用于设置上下左右页边距
+\usepackage{amsmath,paralist,enumerate,booktabs,
+multirow,graphicx,subfig,setspace,listings,lastpage}
+%amsmath：数学公式
+%paralist，enumerate：自定义项目符号
+%booktabs：三线图，论文常用的表格风格
+%multirow：复杂表格
+%graphicx，float: 插入图片
+%subfig：并排排版图片、竖向排版图片
+%setspace：设置行间距等功能
+\setlength{\parindent}{2em}%正文首行缩进两个汉字
+
+\usepackage{hyperref}
+\hypersetup{
+    hidelinks
+}
+
+\usepackage{fancyhdr}
+\setlength{\headheight}{14.5pt} % 设置页眉高度
+\addtolength{\topmargin}{-2.5pt} % 设置页眉与顶部的距离
+
+\pagestyle{fancy}
+%分别是右页眉、左页眉、中页脚、右页脚
+\rhead{实验B01 参考文献的检索和管理}
+\lhead{基础物理实验\uppercase\expandafter{\romannumeral2}实验报告}
+\cfoot{Page \thepage/\pageref{LastPage}}  %当前页\总页数
+\rfoot{\today}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\theenumi}{(\arabic{enumi})}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%正文开始%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%begin-------------------标题与信息-----------------------%%
+
+%%标题
+\begin{center}
+\LARGE\textbf{实验B01 参考文献的检索和管理}
+\end{center}
+
+%%信息
+\begin{doublespacing}
+	%doublespacing：手动两倍行距
+	\centering
+	\begin{tabular}{p{6.5cm}p{6.5cm}}
+	 & \\
+	 实验人姓名、学号： & 合作者姓名、学号：\\
+	 {时间：} & {实验地点：}\\
+	 {室温：} & 相对湿度：
+	
+	\end{tabular}
+\end{doublespacing}
+
+%%end-------------------标题与信息-----------------------%%
+
+
+\section*{【实验目的】}
+
+
+\section*{【仪器用具】}
+
+	\begin{table}[htbp]
+	  \centering
+	    \begin{tabular}{cccp{20em}}
+	    \toprule
+	    编号    & 仪器用具名称 & 数量    & 主要参数（型号，测量范围，测量精度等） \\
+	    \midrule
+	    1     & 计算机 & 1     &  \\
+	    \bottomrule
+	    \end{tabular}%
+	  \label{tab:device}%
+	\end{table}%
+
+\section*{【实验原理】}
+
+\begin{table}[htbp]
+	\centering
+		\caption{表名}
+		\vspace{1em} % 表名与表格的间距
+		{
+		\begin{tabular}{ccccc}
+		\toprule
+		频率/Hz &  Cx电容/nF &  Lx电感1mH & Cx的电阻 & Lx的电阻 \\
+		\midrule
+		10K & 97.58 & 19.66 & 111.6 & 133.3 \\
+		1k & 98.44 & 19.85 & 57.4 & 133.5 \\
+		\bottomrule
+		\end{tabular}
+		}
+		\label{tab:data}
+\end{table}
+
+\section*{【实验内容及步骤】}
+
+
+
+\section*{【数据处理及分析】}
+
+
+\section*{【思考题】}
+
+	
+\end{document}

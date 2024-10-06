@@ -1,0 +1,177 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.menu-bar {
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+}
+
+.menu-bar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+.toolbar {
+    background-color: #f1f1f1;
+    padding: 0 5px 4px;
+    display: flex;
+    align-items: center;
+    height: 28px;
+}
+
+.toolbar button {
+    margin-right: 3px;
+    padding: 1px 6px;
+    font-size: 0.8em;
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 20px;
+    line-height: 1;
+    cursor: pointer;
+    position: relative;
+    top: -8px;
+}
+
+.toolbar button:hover {
+    background-color: #d0d0d0;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    margin-left: 0;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.status-bar {
+    background-color: #f1f1f1;
+    border-top: 1px solid #ddd;
+    padding: 0 10px; /* 修改padding */
+    font-size: 0.9em;
+    color: #333;
+    display: flex;
+    align-items: center;
+    height: 30px; /* 增加高度 */
+}
+
+.main-content {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    overflow-y: auto;
+    transition: margin-left 0.3s ease-in-out;
+    position: relative; /* 添加这一行 */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 25px; /* 为按钮留出空间 */
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+}
+
+.sidebar a:hover {
+    color: #0056b3;
+}
+
+.toggle-sidebar-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-bottom: 25px;
+    margin-right: 10px;
+    font-size: 1em; /* 调整字体大小 */
+    line-height: 20px; /* 设置为与状态栏高度相同 */
+    height: 20px; /* 设置为与状态栏高度相同 */
+    display: flex; /* 添加 */
+    align-items: center; /* 添加 */
+    justify-content: center; /* 添加 */
+}
+
+.toggle-sidebar-btn::after {
+    content: '《';
+    display: flex; /* 添加 */
+    align-items: center; /* 添加 */
+    justify-content: center; /* 添加 */
+    width: 20px; /* 添加固定宽度 */
+    height: 20px; /* 添加固定高度 */
+}
+
+.sidebar-collapsed .toggle-sidebar-btn::after {
+    content: '》';
+}
+
+.sidebar-collapsed .sidebar {
+    margin-left: -240px;
+}
+
+.sidebar-collapsed .content-wrapper {
+    margin-left: 0;
+}
+
+/* 移除不再需要的样式 */
+.toggle-sidebar-btn:hover {
+    background-color: transparent;
+}
+
+#status-message {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
